@@ -331,7 +331,7 @@ ul.task-list input[type="checkbox"] {
 
       i::before {
         color: var(--global-text-color);
-        transition-property: all 0.2s ease-in-out;
+        transition-property: all 0.1s ease-in-out;
       }
 
       &:hover {
@@ -351,7 +351,7 @@ ul.task-list input[type="checkbox"] {
     background-color: var(--global-text-color);
     border-radius: 1px;
     margin-bottom: 4px;
-    transition: all 0.2s;
+    transition: all 0.1s;
   }
 
   .top-bar {
@@ -401,7 +401,7 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2.5rem;
 
     a {
       img {
@@ -733,11 +733,18 @@ footer.sticky-bottom {
       }
 
       .abbr {
+        min-height: 150px;
+        min-width: 200px;
         margin-bottom: 0.5rem;
 
         abbr {
           display: inline-block;
           background-color: var(--global-theme-color);
+          padding-left: 1rem;
+          padding-right: 1rem;
+          position: absolute;
+          top: 12px;
+          left: 16px;
           margin-bottom: 0.5rem;
           color: var(--global-card-bg-color) !important;
 
@@ -861,6 +868,41 @@ footer.sticky-bottom {
       div.abstract.hidden.open {
         border-color: var(--global-text-color);
       }
+
+      // PZH: Add ours
+      .teaser {
+        border-radius: 8px;
+        height: 150px;
+        width: 100%;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        object-fit: cover;
+      }
+      .teaser img {
+        border-radius: 8px;
+        box-shadow: 3px 3px 6px #888;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      .videoplayer {
+        border-radius: 8px;
+        height: 150px;
+        width: 100%;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        object-fit: cover;
+      }
+
+      .videoplayer video {
+        border-radius: 8px;
+        box-shadow: 3px 3px 6px #888;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
     }
     div.award.hidden {
       border: dashed 1px var(--global-bg-color);
@@ -903,7 +945,7 @@ html.transition,
 html.transition *,
 html.transition *:before,
 html.transition *:after {
-  transition: all 750ms !important;
+  transition: all 0.1s !important;
   transition-delay: 0 !important;
 }
 
@@ -1415,5 +1457,47 @@ figure.cover {
   /* mouse over link */
   a.cover-link:hover {
     color: #23212d !important;
+  }
+}
+
+/* For PC: when the viewport is at least 768px wide */
+/* For PCs: when the viewport is at least 768px wide but below 1200px */
+@media (min-width: 768px) and (max-width: 999px) {
+  .responsive-scrollable {
+    max-height: 30vw;
+  }
+}
+
+/* For larger screens: when the viewport is at least 1200px wide */
+@media (min-width: 1000px) {
+  .responsive-scrollable {
+    max-height: 300px; /* Fixed max-height */
+  }
+}
+
+/* For phones: when the viewport is less than 768px wide */
+@media (max-width: 767px) {
+  .responsive-scrollable {
+    max-height: 70vw;
+  }
+}
+
+@media (min-width: 577px) {
+  .publications ol.bibliography li .teaser {
+    height: 150px;
+  }
+  .publications ol.bibliography li .videoplayer {
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .publications ol.bibliography li .teaser {
+    height: 150px;
+    width: 200px;
+  }
+  .publications ol.bibliography li .videoplayer {
+    height: 150px;
+    width: 200px;
   }
 }
