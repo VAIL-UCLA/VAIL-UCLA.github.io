@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://vision-autonomy-intelligence-lab.github.io/sitemap.xml
+Sitemap: https://vail-ucla.github.io/sitemap.xml
