@@ -30,7 +30,17 @@
           {% if entry.preview contains '://' %}
             <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
           {% else %}
-            {% assign entry_path = entry.preview | prepend: 'assets/teaser/' %}
+            {% assign entry_path = site.baseurl | append: '/assets/teaser/' | append: entry.preview %}
+            <img src="{{ entry_path }}" class="z-depth-1">
+          {% endif %}
+        </div>
+      {% endif %}
+    {% if entry.teaser %}
+        <div class="teaser">
+          {% if entry.teaser contains '://' %}
+            <img class="preview z-depth-1 rounded" src="{{ entry.teaser }}">
+          {% else %}
+            {% assign entry_path = site.baseurl | append: '/assets/teaser/' | append: entry.teaser %}
             <img src="{{ entry_path }}" class="z-depth-1">
           {% endif %}
         </div>
@@ -39,7 +49,8 @@
       {% if entry.teaser_video %}
         <div style="text-align: center;" class="videoplayer">
           <video autoplay="autoplay" muted loop="loop" playsinline class="z-depth-1">
-            <source src="assets/teaser/{{ entry.teaser_video }}" type="video/mp4">
+            {% assign entry_path = site.baseurl | append: '/assets/teaser/' | append: entry.teaser_video %}
+            <source src="{{ entry_path }}" type="video/mp4">
           </video>
         </div>
       {% endif %}
