@@ -4,7 +4,7 @@ permalink: /team/
 title: Team
 description: "Meet Our Team Member!"
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 
