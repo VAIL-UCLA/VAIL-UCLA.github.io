@@ -1,4 +1,4 @@
----
+
 layout: about
 title: About
 permalink: /
@@ -28,3 +28,14 @@ latest_posts:
 ---
 
 The introduction of the lab.
+
+
+<!-- _pages/publications.md -->
+
+<!-- Bibsearch Feature -->
+
+<div class="publications">
+
+{% bibliography %}
+
+</div>
