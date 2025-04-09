@@ -17,10 +17,20 @@ highlighted_projects:
     link: https://metadriverse.github.io/scenarionet/
 ---
 
+
+
+<!-- ============================================ -->
+<div class="clearfix">
+Want to say something here?
+</div>
+<!-- ============================================ -->
+
+
+<!-- ============================================ -->
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-<!-- Custom Swiper Styles -->
+<!-- Swiper Styles (Updated Style, No Background Change) -->
 <style>
   .swiper {
     width: 100%;
@@ -35,14 +45,29 @@ highlighted_projects:
     align-items: center;
     background: #fff;
     text-align: center;
+    font-size: 18px;
   }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      color: var(--global-theme-color); /* Change this to any color you want */
+      font-size: 24px; /* Optional: tweak size */
+    }
+    
+    .swiper-pagination-bullet-active {
+      background: var(--global-theme-color); /* Color of the currently active bullet */
+    }
 
   .swiper-slide video,
   .swiper-slide img {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     max-height: 400px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 12px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* subtle soft shadow */
+    overflow: hidden;    /* to prevent shadow from being clipped */
   }
 
   .slide-title {
@@ -97,10 +122,16 @@ highlighted_projects:
 <!-- Swiper Initialization -->
 <script>
   var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
     loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: ".swiper-pagination",
-      type: "fraction",
+      clickable: true,
     },
     navigation: {
       nextEl: ".swiper-button-next",
@@ -108,8 +139,19 @@ highlighted_projects:
     },
   });
 </script>
+<!-- ============================================ -->
 
 
+
+
+
+<!-- ============================================ -->
+<!-- News -->
+<h2>
+News
+</h2>
+{% include news.liquid limit=true %}
+<!-- ============================================ -->
 
 
 <!-- _pages/publications.md -->
