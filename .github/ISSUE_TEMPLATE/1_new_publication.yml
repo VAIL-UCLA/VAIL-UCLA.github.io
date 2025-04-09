@@ -4,9 +4,9 @@ body:
   - type: textarea
     attributes:
       label: New paper entry.
-      description: >
-        Write a new paper bib entry. Please follow the template below. Leave `teaser_video` and `teaser` (teaser image) blank. Upload teaser video or image here. You can checkout [this link](_bibliography/papers.bib) to see other papers.
+      description: ""
       value: |
+        Write a new paper bib entry. Please follow the template below. Leave teaser_video and teaser (teaser image) blank. Upload teaser video or image here. You can checkout this link to see other papers.
         ```
         @inproceedings{peng2025data,
           abbr={ICRA},
