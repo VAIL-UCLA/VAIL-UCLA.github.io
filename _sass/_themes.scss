@@ -12,15 +12,15 @@
   --global-text-color-light: #{$grey-color};
 
   // PZH: Changed the theme color to red
-  --global-theme-color: #{$red-color-dark};
-  --global-hover-color: #{$red-color-dark};
+  --global-theme-color: #{$ucla-blue};
+  --global-hover-color: #{$ucla-blue};
   --global-footer-bg-color: #{$white-color};
   --global-footer-text-color: #{$grey-color-light};
   --global-footer-link-color: #{$grey-color-light};
   --global-distill-app-color: #{$grey-color};
   --global-divider-color: rgba(0, 0, 0, 0.1);
   --global-card-bg-color: #{$white-color};
-  --global-highlight-color: #{$red-color-dark};
+  --global-highlight-color: #{$ucla-blue};
   --global-back-to-top-bg-color: rgba(
     #{color.channel($black-color, "red", $space: rgb)},
     #{color.channel($black-color, "green", $space: rgb)},
