@@ -4,7 +4,7 @@ body:
   - type: textarea
     attributes:
       label: New paper entry.
-      description: ""
+      description: New paper entry.
       value: |
         Write a new paper bib entry. Please follow the template below. Leave teaser_video and teaser (teaser image) blank. Upload teaser video or image here. You can checkout this link to see other papers.
         ```
