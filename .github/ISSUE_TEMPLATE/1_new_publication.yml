@@ -1,0 +1,28 @@
+name: New publication
+description: New publication entry for the website.
+body:
+  - type: textarea
+    attributes:
+      label: New paper entry.
+      description: >
+        Write a new paper bib entry. Please follow the template below. Leave `teaser_video` and `teaser` (teaser image) blank. Upload teaser video or image here. You can checkout [this link](_bibliography/papers.bib) to see other papers.
+      value: |
+        ```
+        @inproceedings{peng2025data,
+          abbr={ICRA},
+          title={Data-Efficient Learning from Human Interventions for Mobile Robots},
+          author={Zhenghao Peng and Zhizheng Liu and Bolei Zhou},
+          year={2025},
+          booktitle={International Conference on Robotics and Automation},
+          teaser_video={LEAVEBLANK!!!},
+          teaser={LEAVEBLANK!!!},
+          code={LINK_TO_CODE_OR_LEAVE_BLANK},
+          poster={LINK_TO_POSTER_OR_LEAVE_BLANK},
+          slides={LINK_TO_SLIDES_OR_LEAVE_BLANK},
+          website={https://metadriverse.github.io/pvp4real},
+          pdf={https://arxiv.org/pdf/2503.04969},
+          external_video={https://www.youtube.com/watch?v=jPS93-d6msM},
+        }
+        ```
+    validations:
+      required: true
