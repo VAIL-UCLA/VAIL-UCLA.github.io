@@ -3,15 +3,22 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-vision-and-autonomy-intelligence-lab-at-ucla",
-    title: "Vision and Autonomy Intelligence Lab at UCLA",
+    id: "nav-vision-and-autonomy-intelligence-lab",
+    title: "Vision and Autonomy Intelligence Lab",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-team",
+  },{id: "nav-publications",
+          title: "Publications",
+          description: "Complete list of publications from the Vision and Autonomy Intelligence Lab at UCLA.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-team",
           title: "Team",
-          description: "Meet Our Team Member!",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/team/";
@@ -34,6 +41,12 @@ ninja.data = [{
               window.location.href = "/books/the_godfather/";
             },},{id: "news-papers-on-building-rl-env-from-video-via-3d-gs-and-improving-vlm-via-metavqa-were-accepted-to-cvpr-2025",
           title: 'Papers on building RL env from video via 3D GS and improving VLM...',
+          description: "",
+          section: "News",},{id: "news-two-papers-were-accepted-to-iccv-2025",
+          title: 'Two papers were accepted to ICCV 2025.',
+          description: "",
+          section: "News",},{id: "news-two-papers-were-accepted-to-iccv-2025",
+          title: 'Two papers were accepted to ICCV 2025.',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
