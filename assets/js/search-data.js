@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-publications",
           title: "Publications",
-          description: "Complete list of publications from the Vision and Autonomy Intelligence Lab at UCLA.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
