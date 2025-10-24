@@ -3,8 +3,8 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-vision-and-autonomy-intelligence-lab",
-    title: "Vision and Autonomy Intelligence Lab",
+    id: "nav-lab",
+    title: "Lab",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
