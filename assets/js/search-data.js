@@ -61,7 +61,7 @@ ninja.data = [{
           title: 'Honglin He won the Amazon Trainium Fellowship.',
           description: "",
           section: "News",},{id: "news-ppl-adv-bmt-and-autovla-were-accepted-to-neurips-2025",
-          title: 'PPL, Adv-BMT, and AutoVLA were accepted to Neurips 2025.',
+          title: 'PPL, Adv-BMT, and AutoVLA were accepted to NeurIPS 2025.',
           description: "",
           section: "News",},{id: "news-wayne-wu-won-the-2025-chancellor-s-award-for-postdoctoral-research-at-ucla",
           title: 'Wayne Wu won the 2025 Chancellor’s Award for Postdoctoral Research at UCLA.',
