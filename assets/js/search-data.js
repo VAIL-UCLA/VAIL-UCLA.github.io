@@ -49,7 +49,7 @@ ninja.data = [{
           title: 'We co-organized Workshop on Populating Empty Cities at CVPR 2024.',
           description: "",
           section: "News",},{id: "news-prof-zhou-won-the-2025-onr-young-investigator-award",
-          title: 'Prof. Zhou won the 2025 ONR Young Investigator Award, .',
+          title: 'Prof. Zhou won the 2025 ONR Young Investigator Award.',
           description: "",
           section: "News",},{id: "news-urban-sim-highlight-vid2sim-and-metavqa-were-accepted-to-cvpr-2025",
           title: 'Urban-Sim (Highlight), Vid2Sim, and MetaVQA were accepted to CVPR 2025.',
