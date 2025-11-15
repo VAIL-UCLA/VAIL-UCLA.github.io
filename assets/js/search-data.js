@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-awards",
+          title: "Awards",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/awards/";
+          },
         },{id: "nav-team",
           title: "Team",
           description: "",
@@ -47,6 +54,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-we-co-organized-workshop-on-populating-empty-cities-at-cvpr-2024",
           title: 'We co-organized Workshop on Populating Empty Cities at CVPR 2024.',
+          description: "",
+          section: "News",},{id: "news-zhenghao-peng-won-the-amazon-fellowship",
+          title: 'Zhenghao Peng won the Amazon Fellowship.',
           description: "",
           section: "News",},{id: "news-prof-zhou-won-the-2025-onr-young-investigator-award",
           title: 'Prof. Zhou won the 2025 ONR Young Investigator Award.',
