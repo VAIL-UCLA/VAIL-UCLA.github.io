@@ -20,7 +20,7 @@ institutions:
 nav: false
 nav_order: 1
 code_link: https://github.com/VAIL-UCLA/AURA
-pdf_link: https://arxiv.org/abs/2604.01659 # TODO
+pdf_link: https://arxiv.org/abs/2604.01659
 
 
 # TODO update the demo video
