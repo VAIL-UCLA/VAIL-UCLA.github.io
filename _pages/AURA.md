@@ -20,7 +20,7 @@ institutions:
 nav: false
 nav_order: 1
 code_link: https://github.com/VAIL-UCLA/AURA
-pdf_link: https://vail-ucla.github.io/assets/projects/aura/AURA.pdf # TODO
+pdf_link: https://arxiv.org/abs/2604.01659 # TODO
 
 
 # TODO update the demo video
@@ -371,10 +371,13 @@ We evaluate the instruction-following performance of our model on a wheeled robo
 ## Reference
 
 ```
-@article{ma2026aura,
-    title={AURA: Multimodal Shared Autonomy for Real-World Urban Navigation},
-    author={Ma, Yukai and He, Honglin and Song, Selina and Wu, Wayne and Zhou, Bolei},
-    journal={Computer Vision and Pattern Recognition},
-    year={2026}
+@misc{ma2026auramultimodalsharedautonomy,
+      title={AURA: Multimodal Shared Autonomy for Real-World Urban Navigation}, 
+      author={Yukai Ma and Honglin He and Selina Song and Wayne Wu and Bolei Zhou},
+      year={2026},
+      eprint={2604.01659},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2604.01659}, 
 }
 ```
