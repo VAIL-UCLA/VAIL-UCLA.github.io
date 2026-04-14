@@ -2,7 +2,7 @@
 layout: research
 permalink: /BridgeSim/
 title:  "BridgeSim: Unveiling the OL-CL Gap in End-to-End Autonomous Driving"
-page_title: "BridgeSim: Unveiling the OL-CL Gap in End-to-End Autonomous Driving"
+page_title: '<img src="/assets/projects/bridgesim/bridgesim_logo.png" style="height:1.2em;"> BridgeSim: Unveiling the OL-CL Gap in End-to-End Autonomous Driving'
 authors:
   - {name: "Seth Z. Zhao*", url: "https://sethzhao506.github.io", institution: "1"}
   - {name: "Luobin Wang*", url: "https://scholar.google.com/citations?user=rbmtcYsAAAAJ&hl=en", institution: "2"}
@@ -61,10 +61,13 @@ code_link: https://github.com/VAIL-UCLA/BridgeSim
 }
 </style>
 
+<div class="img-container" style="width: 100%; margin: 0 auto;">
+    <img src="../assets/projects/bridgesim/bridgesim_hero.png" class="my-image" alt="Image" />
+</div>
+
 ## Abstract
 
-End-to-end autonomous driving has seen rapid progress on non-reactive simulation benchmarks such as NAVSIM, where planners are evaluated on PDMS-based metrics without environmental feedback. Yet gains on these open-loop (OL) metrics do not reliably transfer to closed-loop (CL) deployment, and the field continues to optimize for open-loop improvements. In this paper, we systematically decompose the root causes of this OL–CL deployment gap into two key factors: Information Asymmetry, resulting from observational domain shifts, and Objective Mismatch, driven by train-test optimization misalignment. Through principled analysis, we demonstrate that while Information Asymmetry is largely recoverable with standard adaptation, the primary catalyst for performance collapse is Objective Mismatch, specifically, biased Q-value estimates that fail to account for the reactive nature of the environment. We further show that under this mismatch, improving open-loop accuracy or scaling test-time computation over the open-loop objective yields diminishing or negative closed-loop returns. To this end, we propose a Test-Time Adaptation (TTA) framework that mitigates observational shift and debiases action-value estimates in inference time. Extensive experiments show that TTA effectively mitigates these biases and exhibits more favorable scaling dynamics than its baseline counterparts. Given these findings, we suggest the community reassess the prevailing reliance on non-reactive evaluation in driving research, and move toward closed-loop-aligned training and evaluation objectives that account for the interactive nature of real-world driving. 
-
+Open-loop (OL) to closed-loop (CL) gap (OL-CL gap) exists when OL-pretrained policies scoring high in OL evaluations fail to transfer effectively in closed-loop deployment. In this paper, we unveil the root causes of this systemic failure and propose a practical remedy. Specifically, we demonstrate that OL policies suffer from Observational Domain Shift and Objective Mismatch. We show that while the former is largely recoverable with adaptation techniques, the latter creates a structural inability to model complex reactive behaviors, which forms the primary OL-CL gap. We find that a wide range of OL policies learn a biased Q-value estimator that neglects both the reactive nature of CL simulations and the temporal awareness needed to reduce compounding errors. To this end, we propose a Test-Time Adaptation (TTA) framework that calibrates observational shift, reduces state-action biases, and enforces temporal consistency. Extensive experiments show that TTA effectively mitigates planning biases and yields superior scaling dynamics than its baseline counterparts. Furthermore, our analysis highlights the existence of blind spots in standard OL evaluation protocols that fail to capture the realities of closed-loop deployment.
 
 <!--research-section-splitter-->
 
@@ -98,7 +101,7 @@ $$\Delta_{\mathrm{obs}}(\theta, \phi) \triangleq J(\pi^{\mathrm{source}}_{\theta
 - **Objective Mismatch** occurs when OL policies, which is optimized against OL proxy reward during the training time, encounters the CL objective that the learned Q-function gives deviated estimates of true state-action values.
 
 <div>
-$$\Delta_{\mathrm{obj}}(\theta) \triangleq J_{k=1}(\bar{\pi}_{\theta, \phi_{\mathrm{CL}}}) - J_{k=H}(\bar{\pi}_{\theta, \phi_{\mathrm{OL}}})$$
+$$\Delta_{\mathrm{obj}}(\theta) \triangleq J_{k^*}(\bar{\pi}_{\theta, \phi_{\mathrm{CL}}}) - J_{k=H}(\bar{\pi}_{\theta, \phi_{\mathrm{OL}}})$$
 </div>
 
 <div class="img-container" style="width: 100%; margin: auto auto;">
@@ -122,7 +125,7 @@ Source and target domains induce different latent distributions due to domain-de
 
 ### Test-time Policy Adaptation
 
-**Unbiased Q-value Estimation**
+**Truncated Q-value Estimation**
 
 Standard Q-value estimation accumulates rewards infinitely, making it intractable under an open-loop model beyond the planning horizon $H$. We introduce a truncated action-value estimator that explicitly cancels the infinite tail:
 
