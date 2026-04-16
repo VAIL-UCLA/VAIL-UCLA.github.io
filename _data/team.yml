@@ -62,18 +62,18 @@
   link: "https://ziyangxie.site/"
   affiliation: "UCLA"
 
+- name: "Matthew Leng"
+  role: "PhD Students"
+  image: "../assets/team/matthewleng.jpg"
+  link: "https://matthew-leng.github.io/"
+  affiliation: "UCLA"
+
 # Master and Undergraduate Students #
 
 - name: "Weizhen Wang"
   role: "Master and Undergraduate Students"
   image: "../assets/team/weizhenwang.jpg"
   link: "https://weizhenwang-1210.github.io/"
-  affiliation: "UCLA"
-
-- name: "Matthew Leng"
-  role: "Master and Undergraduate Students"
-  image: "../assets/team/matthewleng.jpg"
-  link: "https://www.linkedin.com/in/matthew-leng-1820a2346"
   affiliation: "UCLA"
 
 - name: "Jack He"
@@ -86,12 +86,6 @@
   role: "Master and Undergraduate Students"
   image: "../assets/team/junhuahuang.jpg"
   link: "https://harry-junhua-huang.github.io/"
-  affiliation: "UCLA"
-
-- name: "Joe Lin"
-  role: "Master and Undergraduate Students"
-  image: "../assets/team/joelin.jpeg"
-  link: "https://www.linkedin.com/in/joe-lin-tech"
   affiliation: "UCLA"
 
 - name: "Selina Song"
@@ -132,11 +126,7 @@
 
 
 # Visiting Students #
-- name: "Yukai Ma"
-  role: "Visiting Students"
-  image: "../assets/team/yukaima.jpeg"
-  link: "https://yukai-ma.github.io/"
-  affiliation: "UCLA"
+
 
 - name: "Liu Liu"
   role: "Visiting Students"
@@ -278,6 +268,19 @@
   affiliation: "PhD Student at Stanford"
 
 # Alumni - Undergraduates and student researchers #
+
+
+
+- name: "Yukai Ma"
+  role: "Alumni - Undergraduates and Student Researchers"
+  link: "https://yukai-ma.github.io/"
+  year: "2025-2026"
+  affiliation: "PhD student at Zhejiang University"
+- name: "Joe Lin"
+  role: "Alumni - Undergraduates and Student Researchers"
+  link: "https://www.linkedin.com/in/joe-lin-tech"
+  year: "2024-2025"
+  affiliation: "Works at Coco Robotics"
 - name: "Mingxuan Liu"
   role: "Alumni - Undergraduates and Student Researchers"
   link: "https://oatmealliu.github.io/"
