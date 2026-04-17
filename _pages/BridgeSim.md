@@ -27,7 +27,7 @@ institutions:
 nav: false
 nav_order: 1
 code_link: https://github.com/VAIL-UCLA/BridgeSim
-# pdf_link: https://arxiv.org/pdf/2506.23316
+pdf_link: https://arxiv.org/abs/2604.10856
 ---
 
 <style>
@@ -168,4 +168,15 @@ Standard test-time scorers operate memorylessly, selecting from the current cand
 
 
 <!--research-section-splitter-->
+
+## Citation
+
+```
+@article{zhao2026bridgesim,
+ title={BridgeSim: Unveiling the OL-CL Gap in End-to-End Autonomous Driving},
+ author={Zhao, Seth Z and Wang, Luobin and Ruan, Hongwei and Bao, Yuxin and Chen, Yilan and Leng, Ziyang and Ravichandran, Abhijit and He, Honglin and Zhou, Zewei and Han, Xu and others},
+ journal={arXiv preprint arXiv:2604.10856},
+ year={2026}
+}
+```
 
