@@ -14,12 +14,6 @@
 
 
 # Graduate Students # 
-- name: "Zhenghao Peng"
-  role: "PhD Students"
-  image: "../assets/team/zhenghao.jpeg"
-  link: "https://pengzhenghao.github.io/"
-  affiliation: "UCLA"
-
 - name: "Zhizheng Liu"
   role: "PhD Students"
   image: "../assets/team/zhizheng.jpg"
@@ -54,12 +48,6 @@
   role: "PhD Students"
   image: "../assets/team/honglinhe.jpg"
   link: "https://dhlinv.github.io/"
-  affiliation: "UCLA"
-
-- name: "Ziyang Xie"
-  role: "PhD Students"
-  image: "../assets/team/ziyangxie.jpg"
-  link: "https://ziyangxie.site/"
   affiliation: "UCLA"
 
 - name: "Matthew Leng"
@@ -128,12 +116,6 @@
 # Visiting Students #
 
 
-- name: "Liu Liu"
-  role: "Visiting Students"
-  image: "../assets/team/liuliu.png"
-  link: "https://dusp.mit.edu/people/liu-liu"
-  affiliation: "UCLA"
-
 - name: "Haoxuan Wang"
   role: "Visiting Students"
   image: "../assets/team/haoxuanwang.jpg"
@@ -180,6 +162,12 @@
 
 
 # Alumni - PhD Studentss # 
+- name: "Zhenghao Peng"
+  role: "Alumni - Graduated PhD Students"
+  link: "https://pengzhenghao.github.io/"
+  year: "2022-2026"
+  affiliation: "UCLA"
+
 - name: "Qihang Zhang"
   role: "Alumni - Graduated PhD Students"
   link: "https://zqh0253.github.io/"
@@ -271,6 +259,11 @@
 
 
 
+- name: "Liu Liu"
+  role: "Alumni - Undergraduates and Student Researchers"
+  link: "https://dusp.mit.edu/people/liu-liu"
+  year: "2026"
+  affiliation: "PhD student at MIT"
 - name: "Yukai Ma"
   role: "Alumni - Undergraduates and Student Researchers"
   link: "https://yukai-ma.github.io/"
