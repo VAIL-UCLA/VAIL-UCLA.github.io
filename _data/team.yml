@@ -50,7 +50,8 @@
   link: "https://dhlinv.github.io/"
   affiliation: "UCLA"
 
-- name: "Matthew Leng"
+
+- name: "Ziyang Leng"
   role: "PhD Students"
   image: "../assets/team/matthewleng.jpg"
   link: "https://matthew-leng.github.io/"
@@ -257,6 +258,11 @@
 
 # Alumni - Undergraduates and student researchers #
 
+- name: "Ziyang Xie"
+  role: "Alumni - Undergraduates and Student Researchers"
+  link: "https://ziyangxie.site/"
+  year: "2025-2026"
+  affiliation: "Works in Tech"
 
 
 - name: "Liu Liu"
