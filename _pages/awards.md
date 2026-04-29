@@ -11,6 +11,7 @@ _styles: >
 # Awards
 
 <!-- Edit below freely in Markdown -->
+- [Ziyang Leng](https://matthew-leng.github.io/): Outstanding Graduating MS Student of UCLA CS department, 2026
 - [Joe Lin](https://www.linkedin.com/in/joe-lin-tech/): 2025–2026 CRA Outstanding Undergraduate Researcher Award Honorable Mention, 2025
 - [Dr. Wayne Wu](https://wywu.github.io/): [UCLA Chancellor’s Award for Postdoctoral Research](https://grad.ucla.edu/life-at-ucla/events/2024-postdoctoral-scholars-mentors-awards-ceremony/), 2025
 - [Honglin He](https://dhlinv.github.io/): Amazon Trainium Fellowship, 2025
