@@ -19,7 +19,7 @@ institutions:
 nav: false
 nav_order: 1
 code_link: https://github.com/VAIL-UCLA/FlowPilot
-pdf_link: https://github.com/VAIL-UCLA/FlowPilot
+pdf_link: ../assets/projects/flowpilot/_Arxiv__FlowPilot.pdf
 
 ---
 
