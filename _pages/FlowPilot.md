@@ -19,7 +19,7 @@ institutions:
 nav: false
 nav_order: 1
 code_link: https://github.com/VAIL-UCLA/FlowPilot
-pdf_link: ../assets/projects/flowpilot/_Arxiv__FlowPilot.pdf
+pdf_link: ../assets/projects/flowpilot/paper.pdf
 
 ---
 
@@ -29,14 +29,15 @@ pdf_link: ../assets/projects/flowpilot/_Arxiv__FlowPilot.pdf
         Your browser does not support the video tag.
     </video>
 </div>
+<div style="text-align:center;font-size:14px;color:#444;margin-top:4px;margin-bottom:12px;">FlowPilot is validated for real-world experiments on the mobile robot platform developed by <a href="https://www.cocodelivery.com/">Coco Robotics</a>.</div>
 
 <div class="research-section">
     <h3 style="text-align: center">TL;DR</h3>
     <ul style="list-style-type: none; padding-left: 0;">
       <strong>FlowPilot</strong> is a mapless, monocular-camera navigation policy that goes <em>from imitation to alignment</em>. We first pretrain the policy on large-scale offline demonstrations, then align it with only a few human-preference samples for safe, socially compliant behavior required by long-horizon sidewalk navigation.<br><br>
-    1. 🌊 Introduces <strong>Anchored Flow Matching</strong> with gated conditioning to provide an expressive, multi-modal action representation that captures diverse sidewalk behaviors while suppressing goal-driven shortcuts.<br>
-    2. 🤝 Proposes a reward-free <strong>human-in-the-loop preference learning</strong> scheme that aligns the policy with socially compliant behavior from a small amount of human intervention data, while preserving its imitation priors.<br>
-    3. 🛣️ Validated in both simulation and real-world experiments: <strong>FlowPilot-Base</strong> reaches 42% success rate and 66% route completion in simulation, and human-preference fine-tuned <strong>FlowPilot-HP</strong> cuts the real-world intervention rate by 40.0% and normalized intervention rate by 52.1%.
+    1. 🌊 We introduce <strong>Anchored Flow Matching</strong> with gated conditioning to provide an expressive, multi-modal action representation that captures diverse sidewalk behaviors while suppressing goal-driven shortcuts.<br>
+    2. 🤝 We propose a reward-free <strong>human-in-the-loop preference learning</strong> scheme that aligns the policy with socially compliant behavior from a small amount of human intervention data, while preserving imitation priors.<br>
+    3. 🛣️ We validate in both simulation and real-world experiments: <strong>FlowPilot-Base</strong> reaches 42% success rate and 66% route completion in simulation, and human-preference fine-tuned <strong>FlowPilot-HP</strong> cuts the real-world intervention rate by 40.0% and normalized intervention rate by 52.1%.
   </ul>
 </div>
 
@@ -57,7 +58,7 @@ FlowPilot consists of two key components:<br>
 ## Long-Horizon Sidewalk Navigation Results
 
 <div style="display: flex; align-items: center; gap: 12px; margin: 0 auto 18px auto;">
-  <div style="flex: 0 0 30px; display: flex; align-items: center; justify-content: center; font-weight: 600;"><span style="writing-mode: vertical-rl; transform: rotate(180deg);">Daytime (9X Speed)</span></div>
+  <div style="flex: 0 0 30px; display: flex; align-items: center; justify-content: center; font-weight: 600;"><span style="writing-mode: vertical-rl; transform: rotate(180deg);">Daytime (6X Speed)</span></div>
   <div style="flex: 1; min-width: 0;">
     <video muted autoplay playsinline controls loop style="width: 100%; height: auto; display: block;">
         <source src="../assets/projects/flowpilot/Long_01_morning_4_2x_processed.mp4" type="video/mp4">
@@ -67,7 +68,7 @@ FlowPilot consists of two key components:<br>
 </div>
 
 <div style="display: flex; align-items: center; gap: 12px; margin: 0 auto;">
-  <div style="flex: 0 0 30px; display: flex; align-items: center; justify-content: center; font-weight: 600;"><span style="writing-mode: vertical-rl; transform: rotate(180deg);">Nighttime (9X Speed)</span></div>
+  <div style="flex: 0 0 30px; display: flex; align-items: center; justify-content: center; font-weight: 600;"><span style="writing-mode: vertical-rl; transform: rotate(180deg);">Nighttime (6X Speed)</span></div>
   <div style="flex: 1; min-width: 0;">
     <video muted autoplay playsinline controls loop style="width: 100%; height: auto; display: block;">
         <source src="../assets/projects/flowpilot/Long_02_night_2_8x_processed.mp4" type="video/mp4">
@@ -359,6 +360,10 @@ FlowPilot consists of two key components:<br>
          year={2026},
 }
 ```
+
+## Acknowledgement
+
+We thank <a href="https://www.linkedin.com/in/brad-squicciarini-478954126/">Brad Squicciarini</a> and <a href="https://www.linkedin.com/in/akshat-pandya/">Akshat Pandya</a> for providing comments and feedback.
 
 <script>
 // This page has many videos. Browsers cap how many can decode at once, so
