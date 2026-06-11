@@ -9,13 +9,24 @@ layout: project
         <p class="post-description">{{ page.description }}</p>
         {% if page.authors %}
         <div class="col-12 md-5" style="margin-bottom: 2rem;">
-            <h6 style="text-align: center; font-size: 1.2rem; margin-bottom: 0.5rem;">
+            <h6 style="text-align: center; font-size: 1.2rem; margin-bottom: 0.2rem;">
                 {% for author in page.authors %}
                 <a href={{ author.url }}><b>{{ author.name }}</b></a>
                 <sup>{{ author.institution }}</sup>
                 {% if forloop.last %}{% else %}, {% endif %}
                 {% endfor %}
             </h6>
+            {% if page.authors2 %}
+            <h6 style="text-align: center; font-size: 1.2rem; margin-bottom: 0.5rem;">
+                {% for author in page.authors2 %}
+                <a href={{ author.url }}><b>{{ author.name }}</b></a>
+                <sup>{{ author.institution }}</sup>
+                {% if forloop.last %}{% else %}, {% endif %}
+                {% endfor %}
+            </h6>
+            {% else %}
+            <div style="margin-bottom: 0.3rem;"></div>
+            {% endif %}
             <h6 style="text-align: center; font-size: 1rem;">
                 {% for inst in page.institutions %}
                 <sup>{{ inst.institution }}</sup>
