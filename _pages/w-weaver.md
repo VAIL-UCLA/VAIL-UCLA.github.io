@@ -544,7 +544,7 @@ We ablate the supervision signals used to ground the world state registers. The 
         <td>88.1</td>
       </tr>
       <tr>
-        <td>+Bird's-eye view</td>
+        <td>+BEV</td>
         <td>82.8</td>
         <td>39.1</td>
         <td>96.9</td>
