@@ -24,9 +24,58 @@ nav_order: 1
 ---
 
 <style>
+  body {
+    background: #f7f8fb;
+  }
+
+  .post-header {
+    max-width: 800pt;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 0;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(30, 41, 59, 0.08);
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.045);
+  }
+
+  .post > article > .research-section {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(30, 41, 59, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.045);
+    margin-top: 1.35rem;
+    margin-bottom: 1.35rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .post > article > .research-section:first-child {
+    border-top: 0;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 14px 26px rgba(15, 23, 42, 0.045);
+    margin-top: -0.5rem;
+    padding-top: 0;
+  }
+
+  .post > article > .research-section h2 {
+    border-bottom: 1px solid rgba(30, 41, 59, 0.09);
+    margin-top: 0.2rem;
+    margin-bottom: 1.15rem;
+    padding-bottom: 0.55rem;
+  }
+
   .post-header .post-title {
     font-size: 2.25rem;
     line-height: 1.16;
+    margin-bottom: 1.35rem;
+  }
+
+  .post-header > .col-12 {
+    margin-bottom: 0.35rem !important;
+  }
+
+  .post-header > .col-12[align="center"] {
+    display: none;
   }
 
   .post-header .post-title .wweaver-title-line {
@@ -39,26 +88,85 @@ nav_order: 1
     font-weight: 900 !important;
   }
 
+  .wweaver-hero-image {
+    margin-top: 1.15rem;
+  }
+
+  .wweaver-hero-image img,
+  .wweaver-media-frame img,
+  .wweaver-gallery video {
+    background: #fff;
+    border: 1px solid rgba(30, 41, 59, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  }
+
+  .wweaver-tldr {
+    background: #f8fbff;
+    border: 1px solid rgba(39, 116, 174, 0.13);
+    border-left: 3px solid rgba(39, 116, 174, 0.55);
+    border-radius: 8px;
+    margin: 1.15rem auto 0;
+    padding: 1rem 1.15rem;
+  }
+
+  .wweaver-tldr h3 {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+  }
+
+  .wweaver-equal-note {
+    color: #444;
+    font-size: 1rem;
+    margin: 0 0 0.45rem;
+    text-align: center;
+  }
+
+  .wweaver-resource-links {
+    color: var(--global-text-color);
+    font-size: 1.15rem;
+    margin: 0.2rem 0 0.4rem;
+    text-align: center;
+  }
+
+  .wweaver-resource-links a {
+    color: var(--global-theme-color);
+    font-weight: 700;
+  }
+
+  .wweaver-resource-links a:hover,
+  .wweaver-resource-links a:focus {
+    text-decoration: underline;
+  }
+
   @media (max-width: 768px) {
+    .post-header {
+      padding: 1.25rem 1rem 0;
+    }
+
+    .post > article > .research-section {
+      padding: 1rem;
+    }
+
     .post-header .post-title {
       font-size: 1.55rem;
     }
   }
 </style>
 
-<p style="text-align: center; margin-top: -1rem;">
+<p class="wweaver-equal-note">
   <sup>*</sup>Equal contribution.
 </p>
 
-<p style="text-align: center; font-size: 1.15rem;">
-  <a href="#"><b>Code</b></a> | <a href="#"><b>Project</b></a>
+<p class="wweaver-resource-links">
+  <a href="#"><b>Paper</b></a> | <a href="#"><b>Code</b></a> | <a href="#"><b>Project</b></a>
 </p>
 
-<div class="img-container" style="width: 100%; margin: 0 auto;">
+<div class="img-container wweaver-hero-image" style="width: 100%; margin: 0 auto;">
   <img src="../assets/projects/w-weaver/img/teaser_v1.jpg" style="width: 100%; height: auto;" alt="W-Weaver teaser" />
 </div>
 
-<div class="research-section">
+<div class="wweaver-tldr">
     <h3 style="text-align: center">TL;DR</h3>
     <p style="margin-bottom: 0;">
       <strong>W-Weaver</strong> is a streaming multi-agent video diffusion model that explicitly models persistent world states with <strong>world state registers</strong>: learnable tokens that store shared world information, track individual agent status, and are dynamically updated after each generated chunk. These registers are grounded with agent statistics, bird's-eye views, and scene text to improve long-horizon consistency across agents.
@@ -72,15 +180,13 @@ nav_order: 1
 <style>
   .wweaver-gallery {
     position: relative;
-    width: 88%;
+    width: 82%;
     margin: 0 auto;
   }
 
   .wweaver-gallery video {
     width: 100%;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   }
 
   .wweaver-gallery-nav {
@@ -108,11 +214,11 @@ nav_order: 1
   }
 
   .wweaver-gallery-prev {
-    left: 8px;
+    left: -54px;
   }
 
   .wweaver-gallery-next {
-    right: 8px;
+    right: -54px;
   }
 
   .wweaver-gallery-pagination {
@@ -184,6 +290,18 @@ nav_order: 1
   }
 
   @media (max-width: 768px) {
+    .wweaver-gallery {
+      width: 88%;
+    }
+
+    .wweaver-gallery-prev {
+      left: -38px;
+    }
+
+    .wweaver-gallery-next {
+      right: -38px;
+    }
+
     .wweaver-results-table table {
       font-size: 0.62rem;
     }
@@ -271,7 +389,7 @@ The rollout examples show synchronized two-player Minecraft generation, where ea
 
 ## Method Overview
 
-<div class="img-container" style="width: 100%; margin: 0 auto;">
+<div class="img-container wweaver-media-frame" style="width: 100%; margin: 0 auto;">
   <img src="../assets/projects/w-weaver/img/overall_pipeline.jpg" style="width: 100%; height: auto;" alt="W-Weaver overview pipeline" />
 </div>
 
@@ -302,7 +420,7 @@ The supervision signals encourage the register to preserve complementary aspects
 - <strong>BEV layout:</strong> bird's-eye-view supervision exposes allocentric geometry shared by both players.
 - <strong>Scene text:</strong> language targets ask registers to retain categories, attributes, and semantic state.
 
-<div class="img-container" style="width: 78%; margin: 1rem auto 0;">
+<div class="img-container wweaver-media-frame" style="width: 78%; margin: 1rem auto 0;">
   <img src="../assets/projects/w-weaver/img/pipe_decoder.jpg" style="width: 100%; height: auto;" alt="World state register decoder overview" />
 </div>
 
