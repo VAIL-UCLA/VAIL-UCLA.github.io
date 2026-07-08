@@ -28,7 +28,7 @@ institutions:
 nav: false
 nav_order: 1
 code_link: https://github.com/VAIL-UCLA/WalkOCC
-pdf_link: https://github.com/VAIL-UCLA/WalkOCC # TODO
+pdf_link: https://arxiv.org/html/2606.19122 
 
 
 # TODO update the demo video
@@ -296,10 +296,10 @@ We present <strong>WalkOCC</strong>, a hybrid Ray-marching-based occupancy-learn
 
 ```
 @article{ma2026monocular,
-         title={Monocular 3D Occupancy Perception for Robots on Sidewalks via Hybrid 2D-3D Learning},
-         author={Ma, Yukai and Lin, Joe and Liu, Liu and He, Honglin and Ricketts, Lulu and Squicciarini, Brad and Liu, Yong and Zhou, Bolei},
-         journal={arXiv preprint},
-         year={2026},
+  title={Monocular 3D Occupancy Perception for Robots on Sidewalks via Hybrid 2D-3D Learning},
+  author={Ma, Yukai and Lin, Joe and Liu, Liu and He, Honglin and Ricketts, Lulu and Squicciarini, Brad and Liu, Yong and Zhou, Bolei},
+  journal={arXiv preprint arXiv:2606.19122},
+  year={2026}
 }
 ```
 

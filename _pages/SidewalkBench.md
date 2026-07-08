@@ -26,7 +26,7 @@ institutions:
 
 nav: false
 nav_order: 1
-code_link: https://github.com/VAIL-UCLA/SidewalkBench
+code_soon: https://github.com/VAIL-UCLA/SidewalkBench
 pdf_link: https://arxiv.org/abs/2606.16953
 
 ---
