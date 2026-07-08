@@ -2,7 +2,7 @@
 layout: research
 permalink: /w-weaver/
 title: "W-Weaver"
-page_title: "From Context to State: Streaming Multi-Agent Autoregressive Diffusion with World State Registers"
+page_title: '<span class="wweaver-title-line">From Context to State: Streaming Multi-Agent</span><br><span class="wweaver-title-line">Autoregressive Diffusion with World State Registers</span>'
 description: ""
 
 authors:
@@ -24,9 +24,25 @@ nav_order: 1
 ---
 
 <style>
+  .post-header .post-title {
+    font-size: 2.25rem;
+    line-height: 1.16;
+  }
+
+  .post-header .post-title .wweaver-title-line {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
   .post-header h6 a:nth-of-type(1) b,
   .post-header h6 a:nth-of-type(2) b {
     font-weight: 900 !important;
+  }
+
+  @media (max-width: 768px) {
+    .post-header .post-title {
+      font-size: 1.55rem;
+    }
   }
 </style>
 
