@@ -1,26 +1,23 @@
 ---
 layout: research
-permalink: /w-weaver/
-title: "W-Weaver"
-page_title: '<span class="wweaver-title-line">From Context to State: Streaming Multi-Agent</span><br><span class="wweaver-title-line">Autoregressive Diffusion with World State Registers</span>'
+permalink: /worldweaver/
+title: "worldweaver"
+page_title: "Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers"
 description: ""
 
 authors:
-
-- {name: "Sicheng Mo*", url: "https://sichengmo.github.io/", institution: "1"}
-- {name: "Yuheng Li*", url: "#", institution: "2"}
-- {name: "Ziyang Leng", url: "#", institution: "1"}
-- {name: "Krishna Kumar Singh", url: "https://krsingh.cs.ucdavis.edu/", institution: "2"}
-- {name: "Bolei Zhou", url: "https://boleizhou.github.io/", institution: "1"}
+  - { name: "Sicheng Mo*", url: "https://sichengmo.github.io/", institution: "1" }
+  - { name: "Yuheng Li*", url: "#", institution: "2" }
+  - { name: "Ziyang Leng", url: "#", institution: "1" }
+  - { name: "Krishna Kumar Singh", url: "https://krsingh.cs.ucdavis.edu/", institution: "2" }
+  - { name: "Bolei Zhou", url: "https://boleizhou.github.io/", institution: "1" }
 
 institutions:
-
-- {name: "University of California, Los Angeles", institution: "1"}
-- {name: "Adobe Research", institution: "2"}
+  - { name: "University of California, Los Angeles", institution: "1" }
+  - { name: "Adobe Research", institution: "2" }
 
 nav: false
 nav_order: 1
-
 ---
 
 <style>
@@ -76,11 +73,6 @@ nav_order: 1
 
   .post-header > .col-12[align="center"] {
     display: none;
-  }
-
-  .post-header .post-title .wweaver-title-line {
-    display: inline-block;
-    white-space: nowrap;
   }
 
   .post-header h6 a:nth-of-type(1) b,
@@ -196,13 +188,13 @@ nav_order: 1
 </p>
 
 <div class="img-container wweaver-hero-image" style="width: 100%; margin: 0 auto;">
-  <img src="../assets/projects/w-weaver/img/teaser_v1.jpg" style="width: 100%; height: auto;" alt="W-Weaver teaser" />
+  <img src="../assets/projects/worldweaver/img/teaser_v1.jpg" style="width: 100%; height: auto;" alt="WorldWeaver teaser" />
 </div>
 
 <div class="wweaver-tldr">
     <h3 style="text-align: center">TL;DR</h3>
     <p style="margin-bottom: 0;">
-      <strong>W-Weaver</strong> is a streaming multi-agent video diffusion model that explicitly models persistent world states with <strong>world state registers</strong>: learnable tokens that store shared world information, track individual agent status, and are dynamically updated after each generated chunk. These registers are grounded with agent statistics, bird's-eye views, and scene text to improve long-horizon consistency across agents.
+      <strong>WorldWeaver</strong> (<strong>W<sup>2</sup></strong>) is a streaming multi-agent video diffusion model that explicitly models persistent world states with <strong>world state registers</strong> (WSR): learnable tokens that store shared world information, track individual agent status, and are dynamically updated after each generated chunk. These registers are grounded with supervision spanning individual agent statistics, a global bird's-eye view, and scene text. We further improve the architecture with a Mixture-of-Transformers design that uses separate weights for world-state modeling and visual frame modeling.
     </p>
 </div>
 
@@ -215,11 +207,25 @@ nav_order: 1
     position: relative;
     width: 82%;
     margin: 0 auto;
+    aspect-ratio: 1562 / 1080;
   }
 
   .wweaver-gallery video {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wweaver-gallery video.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
   }
 
   .wweaver-gallery-nav {
@@ -313,6 +319,10 @@ nav_order: 1
     text-align: left;
   }
 
+  .wweaver-results-table td.sub-variant {
+    padding-left: 1.1rem;
+  }
+
   .wweaver-results-table .metric-group {
     border-bottom: 1px solid var(--global-divider-color);
     font-weight: 700;
@@ -366,8 +376,16 @@ nav_order: 1
 </style>
 
 <div class="wweaver-gallery">
-  <video id="wweaver-gallery-player" muted autoplay playsinline controls loop>
-    <source src="../assets/projects/w-weaver/videos/sample_00.mov">
+  <video class="wweaver-gallery-slide active" data-wweaver-slide="0" muted autoplay playsinline controls preload="auto">
+    <source src="../assets/projects/worldweaver/videos/sample_00.mov">
+    Your browser does not support the video tag.
+  </video>
+  <video class="wweaver-gallery-slide" data-wweaver-slide="1" muted playsinline preload="auto">
+    <source src="../assets/projects/worldweaver/videos/sample_01.mov">
+    Your browser does not support the video tag.
+  </video>
+  <video class="wweaver-gallery-slide" data-wweaver-slide="2" muted playsinline preload="auto">
+    <source src="../assets/projects/worldweaver/videos/sample_02.mov">
     Your browser does not support the video tag.
   </video>
   <button id="wweaver-gallery-prev" class="wweaver-gallery-nav wweaver-gallery-prev" type="button" aria-label="Previous sample">&#10094;</button>
@@ -377,70 +395,83 @@ nav_order: 1
 <div class="wweaver-gallery-pagination" aria-label="Gallery sample selector">
   <button class="wweaver-gallery-dot active" type="button" data-wweaver-gallery-index="0" aria-label="Show sample 1"></button>
   <button class="wweaver-gallery-dot" type="button" data-wweaver-gallery-index="1" aria-label="Show sample 2"></button>
+  <button class="wweaver-gallery-dot" type="button" data-wweaver-gallery-index="2" aria-label="Show sample 3"></button>
 </div>
 
 <script>
   (function() {
-    const videos = [
-      {
-        src: "../assets/projects/w-weaver/videos/sample_00.mov"
-      },
-      {
-        src: "../assets/projects/w-weaver/videos/sample_01.mov"
-      }
-    ];
-    let idx = 0;
+    const gallery = document.querySelector(".wweaver-gallery");
+    if (!gallery) return;
 
-    const player = document.getElementById("wweaver-gallery-player");
+    const slides = Array.prototype.slice.call(gallery.querySelectorAll(".wweaver-gallery-slide"));
     const prevBtn = document.getElementById("wweaver-gallery-prev");
     const nextBtn = document.getElementById("wweaver-gallery-next");
     const dots = document.querySelectorAll("[data-wweaver-gallery-index]");
-    if (!player || !prevBtn || !nextBtn) return;
+    if (!slides.length || !prevBtn || !nextBtn) return;
 
-    function render() {
-      player.src = videos[idx].src;
-      player.load();
-      const playPromise = player.play();
-      if (playPromise && typeof playPromise.catch === "function") playPromise.catch(function() {});
-      dots.forEach(function(dot, dotIdx) {
-        dot.classList.toggle("active", dotIdx === idx);
+    let idx = 0;
+    let advanceTimer = null;
+
+    function show(next) {
+      if (advanceTimer) {
+        clearTimeout(advanceTimer);
+        advanceTimer = null;
+      }
+      next = (next + slides.length) % slides.length;
+      slides.forEach(function(video, i) {
+        const isActive = i === next;
+        video.classList.toggle("active", isActive);
+        if (isActive) {
+          video.setAttribute("controls", "");
+          try { video.currentTime = 0; } catch (e) {}
+          const playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === "function") playPromise.catch(function() {});
+        } else {
+          video.removeAttribute("controls");
+          video.pause();
+        }
       });
+      dots.forEach(function(dot, i) {
+        dot.classList.toggle("active", i === next);
+      });
+      idx = next;
     }
 
     prevBtn.addEventListener("click", function() {
-      idx = (idx - 1 + videos.length) % videos.length;
-      render();
+      show(idx - 1);
     });
     nextBtn.addEventListener("click", function() {
-      idx = (idx + 1) % videos.length;
-      render();
+      show(idx + 1);
     });
     dots.forEach(function(dot) {
       dot.addEventListener("click", function() {
-        idx = Number(dot.getAttribute("data-wweaver-gallery-index")) || 0;
-        render();
+        show(Number(dot.getAttribute("data-wweaver-gallery-index")) || 0);
       });
     });
-    player.addEventListener("ended", function() {
-      idx = (idx + 1) % videos.length;
-      render();
+    slides.forEach(function(video, i) {
+      video.addEventListener("ended", function() {
+        if (i !== idx) return;
+        advanceTimer = setTimeout(function() {
+          show(idx + 1);
+        }, 1000);
+      });
     });
   })();
 </script>
 
-The rollout examples show synchronized two-player Minecraft generation, where each player observes a partial first-person view of the same evolving world. W-Weaver maintains a shared world-state representation so future chunks can condition on persistent state rather than relying only on a growing window of visual context.
+The rollout examples show synchronized two-player Minecraft generation. WorldWeaver maintains a shared world-state representation so future chunks can condition on persistent state rather than relying only on a limited window of recent frames.
 
 <!--research-section-splitter-->
 
 ## Method Overview
 
 <div class="img-container wweaver-media-frame" style="width: 100%; margin: 0 auto;">
-  <img src="../assets/projects/w-weaver/img/overall_pipeline.jpg" style="width: 100%; height: auto;" alt="W-Weaver overview pipeline" />
+  <img src="../assets/projects/worldweaver/img/overall_pipeline.jpg" style="width: 100%; height: auto;" alt="WorldWeaver overview pipeline" />
 </div>
 
 Standard streaming autoregressive diffusion models denoise each new frame from a local frame KV cache. This makes rollout practical, but the model must repeatedly re-infer world information from recent frames, and the stored context remains entangled with visual tokens.
 
-<strong>W-Weaver</strong> augments this pipeline with <strong>world state registers</strong> (WSR): persistent register tokens that carry global scene information and individual agent status across rollout steps. After each generated chunk, the model commits an updated register, removes stale state, and uses the latest register to condition the next frame generation.
+<strong>WorldWeaver</strong> augments this pipeline with <strong>world state registers</strong> (WSR): persistent register tokens that carry global scene information and individual agent status across rollout steps. After each generated chunk, the model commits an updated register, removes stale state, and uses the latest register to condition the next frame generation.
 
 At each rollout step, the model updates the register from the previous register, the local context window, and the current action, then uses the committed register to generate the next frame:
 
@@ -451,13 +482,17 @@ p_\theta(\mathbf{x}_{i+1}\mid \mathbf{x}_{i-W+1},\ldots,\mathbf{x}_i,a_{i+1},\ma
 \]
 </div>
 
-During training, W-Weaver interleaves frame/context tokens and register groups as <code>[C1, R1, C2, R2, ...]</code>. The causal mask makes the rollout causal at the state level: frame tokens attend to the local window and the latest committed register, while each register query attends to the local context ending at its commit step and the immediately preceding register.
+During training, WorldWeaver interleaves frame/context tokens and register groups as <code>[C1, R1, C2, R2, ...]</code>. The causal mask makes the rollout causal at the state level: frame tokens attend to the local window and the latest committed register, while each register query attends to the local context ending at its commit step and the immediately preceding register.
+
+To keep world-state modeling from competing with pixel generation, WorldWeaver adopts a <strong>Mixture-of-Transformers (MoT)</strong> backbone: register tokens and frame tokens are routed through role-specific weight branches, while joint self-attention over the interleaved sequence is preserved so the two pathways keep exchanging information at every step. This separation matters most once the registers carry richer supervised semantics, where a dense backbone that shares parameters across both roles begins to degrade.
+
+WorldWeaver is trained with a three-stage curriculum: (1) <strong>Bidirectional training</strong> adapts a single-player video prior into a synchronized multi-agent teacher; (2) <strong>Causal training</strong> converts the teacher into a causal student with the WSR pathway and register supervision; and (3) <strong>Self-forcing</strong> rolls out the student on its own generated frames and committed registers, exposing state drift together with frame drift to close the train-test gap over long horizons.
 
 <!--research-section-splitter-->
 
 ## Grounding the World State
 
-A core question is not only how to store state, but what the state should represent. W-Weaver grounds each committed register with auxiliary decoders that make the hidden world state inspectable: per-agent simulator statistics, bird's-eye-view scene layout, and scene text. These heads are used during training and discarded at inference, so the supervision does not increase rollout cost.
+A core question is not only how to store state, but what the state should represent. WorldWeaver grounds each committed register with auxiliary decoders that make the hidden world state inspectable: per-agent simulator statistics, a global bird's-eye view, and scene text. These heads are used during training and discarded at inference, so the supervision does not increase rollout cost.
 
 The supervision signals encourage the register to preserve complementary aspects of the world:
 
@@ -466,7 +501,7 @@ The supervision signals encourage the register to preserve complementary aspects
 - <strong>Scene text:</strong> language targets ask registers to retain categories, attributes, and semantic state.
 
 <div class="img-container wweaver-media-frame" style="width: 78%; margin: 1rem auto 0;">
-  <img src="../assets/projects/w-weaver/img/pipe_decoder.jpg" style="width: 100%; height: auto;" alt="World state register decoder overview" />
+  <img src="../assets/projects/worldweaver/img/pipe_decoder.jpg" style="width: 100%; height: auto;" alt="World state register decoder overview" />
 </div>
 
 <!--research-section-splitter-->
@@ -530,7 +565,7 @@ We ablate the supervision signals used to ground the world state registers. The 
         <td>93.8</td>
       </tr>
       <tr>
-        <td>+Agent stats</td>
+        <td class="sub-variant">+ Agent stats</td>
         <td>95.3</td>
         <td>41.0</td>
         <td>59.4</td>
@@ -544,7 +579,7 @@ We ablate the supervision signals used to ground the world state registers. The 
         <td>88.1</td>
       </tr>
       <tr>
-        <td>+BEV</td>
+        <td class="sub-variant">+ BEV</td>
         <td>82.8</td>
         <td>39.1</td>
         <td>96.9</td>
@@ -558,7 +593,7 @@ We ablate the supervision signals used to ground the world state registers. The 
         <td>102.4</td>
       </tr>
       <tr>
-        <td>+Scene text</td>
+        <td class="sub-variant">+ Scene text</td>
         <td>85.9</td>
         <td>40.2</td>
         <td>84.4</td>
@@ -572,7 +607,7 @@ We ablate the supervision signals used to ground the world state registers. The 
         <td>103.2</td>
       </tr>
       <tr class="highlight-row">
-        <td><strong>+All</strong></td>
+        <td class="sub-variant"><strong>+ All</strong></td>
         <td>82.8</td>
         <td>34.0</td>
         <td>93.8</td>
@@ -589,15 +624,15 @@ We ablate the supervision signals used to ground the world state registers. The 
   </table>
 </div>
 
-The ablation shows that persistent registers are useful even without explicit targets, but supervision determines what kind of state they learn to preserve. Agent statistics emphasize per-player motion, bird's-eye views ground global scene layout, and scene text adds semantic state. Combining these signals produces the most balanced world-state representation across motion, geometry, memory, and consistency.
+Even without explicit targets, adding registers already lifts the world score from 81.0 to 93.8, because they give the model a dedicated slot to carry cross-agent information instead of recomputing it from the local window at every step. Explicit supervision then determines what that state encodes: the bird's-eye view is the strongest single signal since it grounds global 3D layout, and combining all three signals on the Mixture-of-Transformers backbone yields the full W<sup>2</sup> model at 105.1. Crucially, the largest gains fall on state-sensitive categories such as grounding, building, and consistency, showing that persistent registers improve logical coherence across players and rollout steps rather than visual fidelity alone.
 
 <!--research-section-splitter-->
 
 ## Reference
 
 ```
-@misc{mo2026contexttostate,
-  title={From Context to State: Streaming Multi-Agent Autoregressive Diffusion with World State Registers},
+@misc{mo2026worldweaver,
+  title={Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers},
   author={Mo, Sicheng and Li, Yuheng and Leng, Ziyang and Singh, Krishna Kumar and Zhou, Bolei},
   year={2026}
 }
