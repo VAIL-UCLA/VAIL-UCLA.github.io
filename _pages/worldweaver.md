@@ -1,7 +1,7 @@
 ---
 layout: research
 permalink: /worldweaver/
-title: "worldweaver"
+title: "WorldWeaver"
 page_title: "Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers"
 description: ""
 
@@ -184,7 +184,7 @@ nav_order: 1
 </p>
 
 <p class="wweaver-resource-links">
-  <a href="#"><b>Paper</b></a> | <a href="#"><b>Code</b></a> | <a href="#"><b>Project</b></a>
+  <a href="https://arxiv.org/pdf/2607.21594"><b>Paper</b></a> | <a href="https://github.com/VAIL-UCLA/WorldWeaver"><b>Code</b></a> | <a href="https://vail-ucla.github.io/worldweaver/"><b>Project</b></a>
 </p>
 
 <div class="img-container wweaver-hero-image" style="width: 100%; margin: 0 auto;">
@@ -631,9 +631,10 @@ Even without explicit targets, adding registers already lifts the world score fr
 ## Reference
 
 ```
-@misc{mo2026worldweaver,
+@article{mo2026worldweaver,
   title={Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers},
   author={Mo, Sicheng and Li, Yuheng and Leng, Ziyang and Singh, Krishna Kumar and Zhou, Bolei},
+  journal={arXiv preprint},
   year={2026}
 }
 ```
