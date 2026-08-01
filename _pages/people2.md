@@ -96,39 +96,5 @@ _styles: >
 </div>
 
 
-<!-- ============================================ -->
-<!-- Sponsors Section -->
-<h2>Sponsors</h2>
-<p>We are grateful for the generous research award and gift supports from the following sponsors:</p>
 
-<style>
-  .sponsors-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .sponsor-logo {
-    height: 60px;
-    width: auto;
-    object-fit: contain;
-  }
-</style>
-
-<div class="sponsors-container">
-  <img src="/assets/img/nsf_logo.svg"  class="sponsor-logo">
-  <img src="/assets/img/onr_logo.png"  class="sponsor-logo">
-  <img src="/assets/img/amazon.png"  class="sponsor-logo">
-  <img src="/assets/img/sony.jpeg"  class="sponsor-logo">
-  <img src="/assets/img/intel.png"  class="sponsor-logo">
-  <img src="/assets/img/samsung.jpeg"  class="sponsor-logo">
-  <img src="/assets/img/cisco.jpeg"  class="sponsor-logo">
-  <img src="/assets/img/coco_logo.png"  class="sponsor-logo">
-  <!-- Add more sponsor logos as needed -->
-</div>
-<!-- ============================================ -->
 </section>

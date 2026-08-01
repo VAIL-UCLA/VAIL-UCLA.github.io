@@ -266,3 +266,43 @@ News
 
 
 {% include recent_publications.liquid %}
+
+
+<!-- ============================================ -->
+<!-- Sponsors Section -->
+<hr>
+<h2>Research Sponsors & Industry Collaborators</h2>
+<p>We thank the following organizations for supporting our research through grants, gifts, sponsored research, and collaborative projects.</p>
+
+<style>
+  .sponsors-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .sponsor-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+  }
+</style>
+
+<div class="sponsors-container">
+  <img src="/assets/img/nsf_logo.svg" class="sponsor-logo" alt="NSF">
+  <img src="/assets/img/onr_logo.png" class="sponsor-logo" alt="ONR">
+  <img src="/assets/img/amazon.png" class="sponsor-logo" alt="Amazon">
+  <img src="/assets/img/sony.jpeg" class="sponsor-logo" alt="Sony">
+  <img src="/assets/img/intel.png" class="sponsor-logo" alt="Intel">
+  <img src="/assets/img/samsung.jpeg" class="sponsor-logo" alt="Samsung">
+  <img src="/assets/img/cisco.jpeg" class="sponsor-logo" alt="Cisco">
+  <img src="/assets/img/coco-logo.png" class="sponsor-logo" alt="COCO">
+  <img src="/assets/img/tri-logo.png" class="sponsor-logo" alt="TRI">
+  <img src="/assets/img/adobe-logo.jpg" class="sponsor-logo" alt="Adobe">
+  <!-- Add more sponsor logos as needed -->
+</div>
+<!-- ============================================ -->
