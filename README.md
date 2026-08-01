@@ -1,4 +1,4 @@
-## Link:  https://vail-ucla.github.io/
+## Link:  https://vail.cs.ucla.edu/
 
 
 ## Setup
