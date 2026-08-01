@@ -57,6 +57,12 @@
   link: "https://matthew-leng.github.io/"
   affiliation: "UCLA"
 
+- name: "Evelyn Nahyeon Kim"
+  role: "PhD Students"
+  image: "../assets/team/evelyn.jpeg"
+  link: "https://lmcr136a.github.io/"
+  affiliation: "UCLA"
+
 # Master and Undergraduate Students #
 
 - name: "Weizhen Wang"
