@@ -304,6 +304,7 @@ News
   <img src="/assets/img/nvidia-logo-horiz.png" class="sponsor-logo" alt="NVIDIA">
   <img src="/assets/img/tri-logo.png" class="sponsor-logo" alt="TRI">
   <img src="/assets/img/adobe-logo.jpg" class="sponsor-logo" alt="Adobe">
+  <img src="/assets/img/qualcomm.png" class="sponsor-logo" alt="Qualcomm">
   <!-- Add more sponsor logos as needed -->
 </div>
 <!-- ============================================ -->
