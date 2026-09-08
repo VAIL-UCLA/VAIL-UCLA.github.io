@@ -3,7 +3,7 @@ layout: research
 permalink: /FlowPilot/
 title: "FlowPilot"
 page_title: "From Imitation to Alignment:<br>Human-Preference Flow Policies for<br>Long-Horizon Sidewalk Navigation"
-description: ""
+description: "<h3>CoRL 2026</h3>"
 
 authors:
 

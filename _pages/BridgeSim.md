@@ -3,6 +3,7 @@ layout: research
 permalink: /BridgeSim/
 title:  "BridgeSim: Unveiling the OL-CL Gap in End-to-End Autonomous Driving"
 page_title: '<img src="/assets/projects/bridgesim/bridgesim_logo.png" style="height:1.2em;"> BridgeSim: Unveiling the OL-CL Gap in End-to-End Autonomous Driving'
+description: "<h3>CoRL 2026</h3>"
 authors:
   - {name: "Seth Z. Zhao*", url: "https://sethzhao506.github.io", institution: "1"}
   - {name: "Luobin Wang*", url: "https://scholar.google.com/citations?user=rbmtcYsAAAAJ&hl=en", institution: "2"}
