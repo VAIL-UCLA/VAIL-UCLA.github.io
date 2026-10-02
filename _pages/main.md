@@ -242,6 +242,7 @@ highlighted_projects:
     spaceBetween: 30,
     centeredSlides: true,
     loop: false,
+    rewind: true,
     watchSlidesProgress: true,
     speed: 1000,
     effect: 'fade',
