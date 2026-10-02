@@ -4,51 +4,35 @@ permalink: /
 title: Lab
 description:
 
-# Video carousel auto-advance timing (in milliseconds)
-carousel_autoplay_delay: 3500
-
 highlighted_projects:
 
-  - teaser_video: /assets/video/urbanverse_demo.mp4
-    teaser_img: 
-    caption: 
-    title: "UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos"
-    link: https://urbanverseproject.github.io/
-  - teaser_video: /assets/video/s2e_demo.mp4
-    teaser_img: 
-    caption: 
-    title: "From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning"
-    link: https://vail-ucla.github.io/S2E/
-  - teaser_video: /assets/video/josh.mp4
-    teaser_img: 
-    caption: 
-    title: "Joint Optimization for 4D Human-Scene Reconstruction in the Wild"
-    link: https://vail-ucla.github.io/JOSH/
-  - teaser_video: /assets/video/SceneStreamer_video.mp4
-    teaser_img: 
-    caption: 
-    title: "SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction"
-    link: https://vail-ucla.github.io/scenestreamer/ 
-  - teaser_video: /assets/video/urbansim_demo.mp4
-    teaser_img: 
-    caption: 
-    title: "Towards Autonomous Micromobility through Scalable Urban Simulation"
-    link: https://metadriverse.github.io/urbansim/
-  - teaser_video: /assets/video/vid2sim_demo.mp4
-    teaser_img: 
-    caption: 
-    title: "Vid2Sim: Realistic and Interactive Simulation from Video for Urban Navigation"
-    link: https://metadriverse.github.io/vid2sim/
-  - teaser_video: /assets/video/dreamland_demo.mp4
-    teaser_img: 
-    caption: 
-    title: "Dreamland: Controllable World Creation with Simulator and Generative Models"
-    link: https://metadriverse.github.io/dreamland/
-  - teaser_video: /assets/video/ppl_demo.mp4
-    teaser_img: 
-    caption: 
-    title: "Predictive Preference Learning from Human Interventions"
-    
+  - teaser_video: /assets/video/worldweaver_teaser.mp4
+    teaser_img: /assets/video/worldweaver_teaser.jpg
+    title: "WorldWeaver: Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers"
+    link: https://vail-ucla.github.io/worldweaver/
+  - teaser_video: /assets/video/flowpilot_teaser.mp4
+    teaser_img: /assets/video/flowpilot_teaser.jpg
+    title: "FlowPilot: From Imitation to Alignment for Long-Horizon Sidewalk Navigation"
+    link: https://vail-ucla.github.io/FlowPilot/
+  - teaser_video: /assets/video/sidewalkbench_teaser.mp4
+    teaser_img: /assets/video/sidewalkbench_teaser.jpg
+    title: "SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks"
+    link: https://vail-ucla.github.io/SidewalkBench/
+  - teaser_video: /assets/video/dreamstream_teaser.mp4
+    teaser_img: /assets/video/dreamstream_teaser.jpg
+    title: "DreamStream: Towards Policy-Oriented Generative Simulation for End-to-End Driving"
+    link: https://vail-ucla.github.io/DreamStream/
+  - teaser_video: /assets/video/cue_the_flow_teaser.mp4
+    teaser_img: /assets/video/cue_the_flow_teaser.jpg
+    title: "Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation"
+    link: https://hatchetproject.github.io/delivery_steer/
+  - teaser_video: /assets/video/chairnav_teaser.mp4
+    teaser_img: /assets/video/chairnav_teaser.jpg
+    title: "ChairNav: Cross-Embodiment Pretraining and Personalization for Long-Horizon Wheelchair Navigation"
+  - teaser_video: /assets/video/aura_teaser.mp4
+    teaser_img: /assets/video/aura_teaser.jpg
+    title: "AURA: Multi-modal Shared Autonomy for Urban Navigation"
+    link: https://vail-ucla.github.io/aura/
 ---
 
 <style>
@@ -128,12 +112,16 @@ highlighted_projects:
       background: var(--global-theme-color); /* Color of the currently active bullet */
     }
 
+  .swiper-slide > a {
+    width: 100%;
+  }
+
   .swiper-slide video,
   .swiper-slide img {
     width: 100%;
     height: 100%;
     max-height: 400px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 12px;
 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* subtle soft shadow */
@@ -159,12 +147,12 @@ highlighted_projects:
 
         {% if item.teaser_video %}
           <video
-            src="{{ item.teaser_video | relative_url }}"
-            autoplay
+            data-src="{{ item.teaser_video | relative_url }}"
+            preload="none"
             muted
-            loop
             playsinline
             poster="{{ item.teaser_img | relative_url }}"
+            aria-label="{{ item.title | escape }}"
           ></video>
         {% elsif item.teaser_img %}
           <img src="{{ item.teaser_img | relative_url }}" alt="{{ item.title }}" />
@@ -192,6 +180,64 @@ highlighted_projects:
 
 <!-- Swiper Initialization -->
 <script>
+  let teaserPlayback = 0;
+
+  function waitForTeaser(video, eventName) {
+    return new Promise((resolve, reject) => {
+      const cleanup = () => {
+        video.removeEventListener(eventName, ready);
+        video.removeEventListener('error', failed);
+      };
+      const ready = () => {
+        cleanup();
+        resolve();
+      };
+      const failed = () => {
+        cleanup();
+        reject(video.error);
+      };
+      video.addEventListener(eventName, ready, { once: true });
+      video.addEventListener('error', failed, { once: true });
+    });
+  }
+
+  function pauseTeasers(carousel) {
+    // Cancel pending playback when a visitor changes slides while loading.
+    teaserPlayback += 1;
+    carousel.slides.forEach((slide) => {
+      const video = slide.querySelector('video');
+      if (video) video.pause();
+    });
+  }
+
+  async function playTeaser(carousel) {
+    const video = carousel.slides[carousel.activeIndex].querySelector('video');
+    if (!video) return;
+    const playback = ++teaserPlayback;
+    const isActive = () => playback === teaserPlayback &&
+      !carousel.destroyed && !carousel.animating &&
+      carousel.slides[carousel.activeIndex].querySelector('video') === video;
+
+    try {
+      // Download each teaser only when its slide is shown.
+      if (!video.getAttribute('src')) {
+        video.preload = 'auto';
+        video.src = video.dataset.src;
+        video.load();
+      }
+      if (video.readyState === 0) await waitForTeaser(video, 'loadedmetadata');
+      if (!isActive()) return;
+
+      // Finish rewinding before playback, including on repeat visits.
+      if (video.currentTime !== 0) video.currentTime = 0;
+      if (video.seeking) await waitForTeaser(video, 'seeked');
+      if (!isActive()) return;
+      await video.play();
+    } catch (error) {
+      if (isActive()) console.warn('Unable to play teaser:', error);
+    }
+  }
+
   var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
     centeredSlides: true,
@@ -201,12 +247,6 @@ highlighted_projects:
     effect: 'fade',
     fadeEffect: {
       crossFade: true
-    },
-    autoplay: {
-      delay: {{ page.carousel_autoplay_delay | default: 3500 }},
-      disableOnInteraction: false,
-      reverseDirection: false,
-      stopOnLastSlide: false,
     },
     pagination: {
       el: ".swiper-pagination",
@@ -220,36 +260,23 @@ highlighted_projects:
     },
     on: {
       slideChangeTransitionStart: function () {
-        // Play the next slide's video at the start of transition
-        const activeSlide = this.slides[this.activeIndex];
-        const activeVideo = activeSlide.querySelector('video');
-        if (activeVideo) {
-          activeVideo.currentTime = 0;
-          activeVideo.play();
-        }
+        pauseTeasers(this);
       },
       slideChangeTransitionEnd: function () {
-        // Pause and reset non-active videos after transition completes
-        const videos = document.querySelectorAll('.swiper-slide video');
-        videos.forEach((video, index) => {
-          if (index !== this.activeIndex) {
-            video.pause();
-            video.currentTime = 0;
-          }
-        });
+        // Start at frame zero after the slide has fully faded into view.
+        playTeaser(this);
       },
       init: function () {
-        // Play first video on init
-        const firstVideo = this.slides[0].querySelector('video');
-        if (firstVideo) {
-          firstVideo.currentTime = 0;
-          firstVideo.play();
-        }
-      },
-      reachEnd: function () {
-        setTimeout(() => {
-          this.slideTo(0);
-        }, {{ page.carousel_autoplay_delay | default: 3500 }});
+        this.slides.forEach((slide) => {
+          const video = slide.querySelector('video');
+          if (!video) return;
+          video.addEventListener('ended', () => {
+            if (this.animating || this.slides[this.activeIndex] !== slide) return;
+            // Advance once the whole clip finishes, then wrap to the first slide.
+            this.slideTo((this.activeIndex + 1) % this.slides.length);
+          });
+        });
+        playTeaser(this);
       }
     }
   });
