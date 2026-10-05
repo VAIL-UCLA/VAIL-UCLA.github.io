@@ -95,11 +95,6 @@
   link: "https://www.linkedin.com/in/vivekalumootil/"
   affiliation: "UCLA"
 
-- name: "Jason Zhang"
-  role: "Master and Undergraduate Students"
-  image: "../assets/team/jasonzhang.jpeg"
-  link: "https://www.linkedin.com/in/jasonszhang/"
-  affiliation: "UCLA"
 
 - name: "Griffin Galimi"
   role: "Master and Undergraduate Students"
@@ -271,6 +266,13 @@
   affiliation: "PhD Student at Stanford"
 
 # Alumni - Undergraduates and student researchers #
+
+
+- name: "Jason Zhang"
+  role: "Alumni - Undergraduates and Student Researchers"
+  image: "../assets/team/jasonzhang.jpeg"
+  link: "https://www.linkedin.com/in/jasonszhang/"
+  affiliation: "MS student at Stanford "
 
 - name: "Haoxuan Wang"
   role: "Alumni - Undergraduates and Student Researchers"
