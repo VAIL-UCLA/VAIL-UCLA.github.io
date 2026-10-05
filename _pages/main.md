@@ -10,6 +10,9 @@ highlighted_projects:
     teaser_img: /assets/video/worldweaver_teaser.jpg
     title: "WorldWeaver: Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers"
     link: https://vail-ucla.github.io/worldweaver/
+  - teaser_video: /assets/video/chairnav_teaser.mp4
+    teaser_img: /assets/video/chairnav_teaser.jpg
+    title: "ChairNav: Cross-Embodiment Pretraining and Personalization for Long-Horizon Wheelchair Navigation"
   - teaser_video: /assets/video/flowpilot_teaser.mp4
     teaser_img: /assets/video/flowpilot_teaser.jpg
     title: "FlowPilot: From Imitation to Alignment for Long-Horizon Sidewalk Navigation"
@@ -26,9 +29,6 @@ highlighted_projects:
     teaser_img: /assets/video/cue_the_flow_teaser.jpg
     title: "Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation"
     link: https://hatchetproject.github.io/delivery_steer/
-  - teaser_video: /assets/video/chairnav_teaser.mp4
-    teaser_img: /assets/video/chairnav_teaser.jpg
-    title: "ChairNav: Cross-Embodiment Pretraining and Personalization for Long-Horizon Wheelchair Navigation"
   - teaser_video: /assets/video/aura_teaser.mp4
     teaser_img: /assets/video/aura_teaser.jpg
     title: "AURA: Multi-modal Shared Autonomy for Urban Navigation"

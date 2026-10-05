@@ -63,19 +63,13 @@
   link: "https://lmcr136a.github.io/"
   affiliation: "UCLA"
 
+- name: "Hung-Chieh Fang"
+  role: "PhD Students"
+  image: "../assets/team/hcfang.jpg"
+  link: "https://hc-fang.github.io/"
+  affiliation: "UCLA"
+
 # Master and Undergraduate Students #
-
-- name: "Weizhen Wang"
-  role: "Master and Undergraduate Students"
-  image: "../assets/team/weizhenwang.jpg"
-  link: "https://weizhenwang-1210.github.io/"
-  affiliation: "UCLA"
-
-- name: "Jack He"
-  role: "Master and Undergraduate Students"
-  image: "../assets/team/jackhe.jpg"
-  link: "https://jackhe313.github.io/"
-  affiliation: "UCLA"
 
 - name: "Junhua Huang"
   role: "Master and Undergraduate Students"
@@ -134,11 +128,7 @@
 # Visiting Students #
 
 
-- name: "Haoxuan Wang"
-  role: "Visiting Students"
-  image: "../assets/team/haoxuanwang.jpg"
-  link: "https://hatchetproject.github.io/"
-  affiliation: "UCLA"
+
 
 # Robot members #
 - name: "Coco Delivery Robot"
@@ -212,6 +202,13 @@
 
   
 # Alumni - Graduated Master's students #
+
+- name: "Weizhen Wang"
+  role: "Alumni - Graduated Master's Students"
+  link: "https://weizhenwang-1210.github.io/"
+  year: "2026"
+  affiliation: "Applied scientist at Accio"
+
 - name: "Yuxin Liu"
   role: "Alumni - Graduated Master's Students"
   link: "https://www.linkedin.com/in/yuxinclaire"
@@ -274,6 +271,12 @@
   affiliation: "PhD Student at Stanford"
 
 # Alumni - Undergraduates and student researchers #
+
+- name: "Haoxuan Wang"
+  role: "Alumni - Undergraduates and Student Researchers"
+  link: "https://hatchetproject.github.io/"
+  year: "2026"
+  affiliation: "PhD student at UIC"
 
 - name: "Ziyang Xie"
   role: "Alumni - Undergraduates and Student Researchers"

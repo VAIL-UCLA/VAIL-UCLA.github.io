@@ -3,7 +3,7 @@ layout: research
 permalink: /SidewalkBench/
 title: "SidewalkBench"
 page_title: "SidewalkBench: Benchmarking Visual Navigation on Urban Sidewalks"
-description: "<h3>CoRL 2026</h3>"
+description: "<h3>CoRL 2026 Spotlight</h3>"
 
 authors:
 
