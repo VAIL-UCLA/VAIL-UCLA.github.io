@@ -77,6 +77,12 @@
   link: "https://harry-junhua-huang.github.io/"
   affiliation: "UCLA"
 
+- name: "Vivek Alumootil"
+  role: "Master and Undergraduate Students"
+  image: "../assets/team/vivek.png"
+  link: "https://www.linkedin.com/in/vivekalumootil/"
+  affiliation: "UCLA"
+
 - name: "Selina Song"
   role: "Master and Undergraduate Students"
   image: "../assets/team/selinasong.jpeg"
@@ -88,13 +94,6 @@
   image: "../assets/team/leonliu.png"
   link: "https://www.linkedin.com/in/leonliu360/"
   affiliation: "UCLA"
-
-- name: "Vivek Alumootil"
-  role: "Master and Undergraduate Students"
-  image: "../assets/team/vivek.png"
-  link: "https://www.linkedin.com/in/vivekalumootil/"
-  affiliation: "UCLA"
-
 
 - name: "Griffin Galimi"
   role: "Master and Undergraduate Students"
@@ -272,7 +271,8 @@
   role: "Alumni - Undergraduates and Student Researchers"
   image: "../assets/team/jasonzhang.jpeg"
   link: "https://www.linkedin.com/in/jasonszhang/"
-  affiliation: "MS student at Stanford "
+  year: "2026"
+  affiliation: "MS student at Stanford"
 
 - name: "Haoxuan Wang"
   role: "Alumni - Undergraduates and Student Researchers"
