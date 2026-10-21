@@ -13,6 +13,7 @@ highlighted_projects:
   - teaser_video: /assets/video/chairnav_teaser.mp4
     teaser_img: /assets/video/chairnav_teaser.jpg
     title: "ChairNav: Cross-Embodiment Pretraining and Personalization for Long-Horizon Wheelchair Navigation"
+    link: https://vail.cs.ucla.edu/ChairNav/
   - teaser_video: /assets/video/flowpilot_teaser.mp4
     teaser_img: /assets/video/flowpilot_teaser.jpg
     title: "FlowPilot: From Imitation to Alignment for Long-Horizon Sidewalk Navigation"
