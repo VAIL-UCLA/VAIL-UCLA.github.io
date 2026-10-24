@@ -11,6 +11,8 @@ _styles: >
 # Awards
 
 <!-- Edit below freely in Markdown -->
+
+- [Prof. Bolei Zhou](https://boleizhou.github.io/): [Okawa Foundation Research Grant](https://www.okawa-foundation.or.jp/en/grant-e-list.php) and UCLA Excellence in Postdoctoral Mentoring Award Finalist, 2026
 - [Zhihao Zhao](https://sethzhao506.github.io/): [Qualcomm Innovation Fellowship](https://www.qualcomm.com/research/university-relations/innovation-fellowship/2026-north-america), 2026
 - [Ziyang Leng](https://matthew-leng.github.io/): Outstanding Graduating MS Student of UCLA CS department, 2026
 - [Joe Lin](https://www.linkedin.com/in/joe-lin-tech/): 2025–2026 CRA Outstanding Undergraduate Researcher Award Honorable Mention, 2025
@@ -23,4 +25,3 @@ _styles: >
 - [Zhenghao Peng](https://pengzhenghao.github.io/): [Amazon Fellowship](https://www.sciencehub.ucla.edu/2024-amazon-fellows/), 2024
 - [Prof. Bolei Zhou](https://boleizhou.github.io/): [NSF CAREER Award](https://samueli.ucla.edu/ucla-computer-science-professor-receives-nsf-career-award-for-research-bringing-ai-into-the-real-world/), 2024
 - [Prof. Bolei Zhou](https://boleizhou.github.io/): [Intel's Rising Star Faculty Award](https://www.intel.com/content/www/us/en/research/news/rising-star-award-2023.html), 2023
-
