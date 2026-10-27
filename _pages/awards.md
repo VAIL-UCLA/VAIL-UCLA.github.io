@@ -12,7 +12,8 @@ _styles: >
 
 <!-- Edit below freely in Markdown -->
 
-- [Prof. Bolei Zhou](https://boleizhou.github.io/): [Okawa Foundation Research Grant](https://www.okawa-foundation.or.jp/en/grant-e-list.php) and UCLA Excellence in Postdoctoral Mentoring Award Finalist, 2026
+- [Prof. Bolei Zhou](https://boleizhou.github.io/): [Okawa Foundation Research Grant](https://www.okawa-foundation.or.jp/en/grant-e-list.php), 2026
+- [Prof. Bolei Zhou](https://boleizhou.github.io/): UCLA Excellence in Postdoctoral Mentoring Award Finalist, 2026
 - [Zhihao Zhao](https://sethzhao506.github.io/): [Qualcomm Innovation Fellowship](https://www.qualcomm.com/research/university-relations/innovation-fellowship/2026-north-america), 2026
 - [Ziyang Leng](https://matthew-leng.github.io/): Outstanding Graduating MS Student of UCLA CS department, 2026
 - [Joe Lin](https://www.linkedin.com/in/joe-lin-tech/): 2025–2026 CRA Outstanding Undergraduate Researcher Award Honorable Mention, 2025
