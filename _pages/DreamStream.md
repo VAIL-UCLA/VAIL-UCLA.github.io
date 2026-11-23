@@ -328,9 +328,9 @@ Navhard-CL turns the non-reactive, open-loop NAVSIM <em>navhard</em> benchmark i
 }
 ```
 
-## Acknowledgement
+## Acknowledgements
 
-This work is supported by the Toyota Research Institute. Seth Z. Zhao was supported by the Qualcomm Innovation Fellowship.
+This work was supported by NSF grants CNS-2235012 and IIS-2339769, and Toyota Research Institute. Seth Z. Zhao was supported by Qualcomm Innovation Fellowship. Sicheng Mo was supported by Amazon AI PhD Fellowship through the Science Hub for Humanity and Artificial Intelligence.
 
 ## Relevant Work
 
